@@ -1,30 +1,15 @@
 package br.com.dio.desafio.dominio;
 
-import java.sql.Struct;
+public class Curso extends Conteudo {
+    // modificadores de acesso (private, protected, public)
+     private int cargaHoraria;
 
-public class Curso {
-    // modificadores de acesso (private, protect, public)
-    private String titulo;
-    private String descricao;
-    private int cargaHoraria;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
+    }
 
     public Curso() {
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public int getCargaHoraria() {
@@ -37,6 +22,6 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso = " + "Título: " + titulo + ", Descrição: " + descricao + ", Carga horária: " + cargaHoraria + " horas";
+        return "Curso = " + "Título: " + getTitulo() + ", Descrição: " + getDescricao() + ", Carga horária: " + cargaHoraria + " horas";
     }
 }
